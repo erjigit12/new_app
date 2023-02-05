@@ -19,11 +19,11 @@ class Articles {
   final String? url;
   final String? ulrToImage;
   final String publishedAt;
-  final String content;
+  final String? content;
 
   factory Articles.fromJson(Map<String, dynamic> json) {
     return Articles(
-      sourse: json['sourse'],
+      sourse: Sourse.fromJson(json['sourse']),
       author: json['author'],
       title: json['title'],
       description: json['description'],

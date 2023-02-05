@@ -1,7 +1,7 @@
 import 'package:new_app/model/articles.dart';
 
-class TopNew {
-  TopNew({
+class TopNews {
+  TopNews({
     required this.status,
     required this.totalResults,
     required this.articles,
@@ -11,11 +11,12 @@ class TopNew {
   final int totalResults;
   final List<Articles> articles;
 
-  factory TopNew.fromJson(Map<String, dynamic> json) {
-    return TopNew(
+  factory TopNews.fromJson(Map<String, dynamic> json) {
+    return TopNews(
       status: json['stasus'],
       totalResults: json['totalResults'],
-      articles: json['articles'],
+      articles: List<Articles>.from(
+          json['articles'].map((x) => Articles.fromJson(x))),
     );
   }
 }
