@@ -11,12 +11,12 @@ class TopNewsRepo {
 
     final response = await client.get(uri);
     if (response.statusCode == 200 || response.statusCode == 201) {
-      print(response.body);
-      print(response.body.runtimeType);
+      // print(response.body);
+      // print(response.body.runtimeType);
 
       final data = jsonDecode(response.body);
-      print(data);
-      print(data.runtimeType);
+      // print(data);
+      // print(data.runtimeType);
 
       final topNews = TopNews.fromJson(data);
       return topNews;

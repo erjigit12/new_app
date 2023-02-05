@@ -9,7 +9,7 @@ class Articles {
     this.url,
     this.ulrToImage,
     required this.publishedAt,
-    required this.content,
+    this.content,
   });
 
   final Sourse sourse;
