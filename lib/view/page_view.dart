@@ -16,6 +16,7 @@ class _ViewPageState extends State<ViewPage> {
   TopNews? topNews;
   Future<void> fetchNews() async {
     topNews = await TopNewsRepo().fetchNews();
+    setState(() {});
   }
 
   @override
