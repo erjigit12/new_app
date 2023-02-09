@@ -59,7 +59,6 @@ class DatailView extends StatelessWidget {
               ? NewsDetailButton(
                   onPressed: () async {
                     final uri = Uri.parse(news.url);
-                    print(news.url);
 
                     if (await canLaunchUrl(uri)) {
                       await launchUrl(uri);

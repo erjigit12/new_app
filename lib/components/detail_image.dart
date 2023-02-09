@@ -19,13 +19,5 @@ class NewsDetailImage extends StatelessWidget {
       errorWidget: (context, url, error) =>
           Image.asset('assets/images/error.jpg'),
     );
-
-    // return Padding(
-    //   padding: const EdgeInsets.all(12.0),
-    //   child: Image.network(
-    //     news.urlToImage ?? ApiConst.image,
-    //     fit: BoxFit.fitWidth,
-    //   ),
-    // );
   }
 }
