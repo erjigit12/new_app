@@ -4,6 +4,7 @@ import 'package:new_app/constants/text.dart';
 import 'package:new_app/model/copy_model.dart';
 import 'package:new_app/service/fetch_service.dart';
 import 'package:new_app/theme/colors.dart';
+import 'package:new_app/view/detail_view.dart';
 
 class ViewPage extends StatefulWidget {
   const ViewPage({Key? key}) : super(key: key);
@@ -42,25 +43,35 @@ class _ViewPageState extends State<ViewPage> {
                 final news = topNews!.articles[index];
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Card(
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 3,
-                          child: Image.network(
-                            news.urlToImage ?? ApiConst.image,
-                            fit: BoxFit.fitWidth,
-                          ),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DatailView(news: news),
                         ),
-                        const SizedBox(width: 14),
-                        Expanded(
-                          flex: 5,
-                          child: Text(
-                            news.title,
-                            style: const TextStyle(fontSize: 20),
+                      );
+                    },
+                    child: Card(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Image.network(
+                              news.urlToImage ?? ApiConst.image,
+                              fit: BoxFit.fitWidth,
+                            ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 14),
+                          Expanded(
+                            flex: 5,
+                            child: Text(
+                              news.title,
+                              style: const TextStyle(fontSize: 20),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );

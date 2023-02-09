@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+import 'package:new_app/constants/api.dart';
+import 'package:new_app/model/copy_model.dart';
+
+class NewsDetailImage extends StatelessWidget {
+  const NewsDetailImage({
+    Key? key,
+    required this.news,
+  }) : super(key: key);
+
+  final Article news;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Image.network(
+        news.urlToImage ?? ApiConst.image,
+        fit: BoxFit.fitWidth,
+      ),
+    );
+  }
+}
