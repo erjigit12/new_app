@@ -6,7 +6,7 @@ class Country {
 }
 
 Country unitedArabEmirates = Country('United Arab Emirates', 'ae');
-Country switzerland = Country('Switzerland', 'sh');
+Country switzerland = Country('Switzerland', 'ch');
 Country russia = Country('Russia', 'ru');
 Country indonezia = Country('Indonezia', 'id');
 Country india = Country('India', 'in');
